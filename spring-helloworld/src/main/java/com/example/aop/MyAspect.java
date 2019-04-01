@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class MyAspect {
     @Before("execution(* com.example.aop.UserService.addUser(..))")
     public void myBefore (JoinPoint joinpoint){
-        System.out.println("前置通知"+joinpoint.getSignature().getName());
+        System.out.println("前置通知"+joinpoint. getSignature().getName());
     }
     @AfterReturning(value = "execution(* com.example.aop.*.*(..))",returning = "jet")
     public void myAfter(JoinPoint joinPoint,Object jet){

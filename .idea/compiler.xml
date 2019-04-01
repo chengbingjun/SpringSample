@@ -10,7 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring.helloworld" target="1.5" />
+      <module name="spring.helloworld" target="6" />
+      <module name="uploadCard" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
