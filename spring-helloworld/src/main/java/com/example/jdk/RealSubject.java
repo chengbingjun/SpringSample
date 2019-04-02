@@ -1,4 +1,4 @@
-package com.example.daili;
+package com.example.jdk;
 
 public class RealSubject implements Subject {
     @Override
