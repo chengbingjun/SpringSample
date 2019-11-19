@@ -11,7 +11,7 @@
     <!-- 开启注解 -->
     <context:annotation-config />
     <mvc:annotation-driven />
-
+    <!-- 开启aspectj代理 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!-- 静态资源(js、image等)的访问 -->

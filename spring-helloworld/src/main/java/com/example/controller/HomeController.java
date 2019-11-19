@@ -3,7 +3,10 @@ package com.example.controller;
 import com.example.aop.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/home")
@@ -17,6 +20,12 @@ public class HomeController {
         userServiceImpl.addUser();
         userServiceImpl.deleteUser();
         //return jsp的文件名就可以跳转到对应的jsp
+        return "hello";
+    }
+
+    @GetMapping("/test")
+    public String test(HttpServletRequest request){
+        System.out.println(request);
         return "hello";
     }
 }
