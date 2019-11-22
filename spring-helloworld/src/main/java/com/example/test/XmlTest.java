@@ -42,7 +42,7 @@ public class XmlTest {
         requestHead.setBizcode("TY001");
         requestHead.setPartner("JIANDA");
         requestHead.setDeviceid("ZZJ010");
-        //requestHead.setDeviceid("1c958eca5cdc9e0f");
+        requestHead.setDeviceid("1c958eca5cdc9e0f");
         requestHead.setIpaddress("172.0.0.1");
         //入参body部分
         RequestBody requestBody = new RequestBody();
