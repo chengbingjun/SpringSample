@@ -61,7 +61,11 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
         <!--xstream相关依赖-->
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
@@ -93,6 +97,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>19.0</version>
+        </dependency>
+        <!--rabbitMQ相关依赖-->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.7.2</version>
         </dependency>
     </dependencies>
     <build>
