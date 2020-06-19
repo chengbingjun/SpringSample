@@ -1,16 +1,17 @@
 package com.example.test;
 
+//各种排序
 public class Test01 {
     public static void main(String[] args) {
         int[] ary = {1,3,5,8,9,6,7,4,2};
         //冒泡排序
-         //mppx(ary);
+         mppx(ary);
 
         //选择排序
         //xzpx(ary);
 
         //直接插入排序
-        crpx(ary);
+//        crpx(ary);
 
     }
 

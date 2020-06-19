@@ -2,9 +2,10 @@ package com.example.test;
 
 import java.util.Arrays;
 
+//有点麻烦，这个排序
 public class Test03 {
     public static void main(String[] args) {
-        int[] c = {1,5,3,2};
+        int[] c = {5,4,3,2,1};
         c = mergeSort(c,0,c.length-1);
         System.out.println(Arrays.toString(c));
     }

@@ -1,22 +1,20 @@
 package com.example.test;
 
+import java.util.Arrays;
+
 public class Test02 {
     public static void main(String[] args) {
-        StringBuffer sb = new StringBuffer("");
-        sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-        sb.append("<soapenv:Envelope "
-                + "    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' "
-                + " xmlns:q0='http://WebXml.com.cn/' "
-                + "    xmlns:xsd='http://www.w3.org/2001/XMLSchema' "
-                + " xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' >");
-        sb.append("<soapenv:Body>");
-        sb.append("<q0:getWeatherbyCityName>");
-        sb.append("<q0:theCityName>唐山</q0:theCityName> ");
-        sb.append("</q0:getWeatherbyCityName>");
-        sb.append("</soapenv:Body>");
-        sb.append("</soapenv:Envelope>");
-        System.out.println(sb.toString());
-        System.out.println("aaa");
+        int[] ary = {1, 3, 5, 8, 9, 6, 7, 4, 2};
+        for (int i = 0; i < ary.length - 1; i++) {
+            for (int j = 0; j < ary.length -1- i; j++) {
+                if(ary[j]>ary[j+1]){
+                    int temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j+1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(ary));
     }
 
 }
