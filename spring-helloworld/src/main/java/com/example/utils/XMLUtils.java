@@ -28,7 +28,8 @@ public class XMLUtils {
         XStream xStream = new XStream(new DomDriver());
         // 扫描@XStream注解
         xStream.processAnnotations(obj.getClass());
-        return xStream.toXML(obj).replaceAll("\\_+", "_");//正则过滤双下划线转为单下划线
+        //正则过滤双下划线转为单下划线
+        return xStream.toXML(obj).replaceAll("\\_+", "_");
     }
 
     /**
