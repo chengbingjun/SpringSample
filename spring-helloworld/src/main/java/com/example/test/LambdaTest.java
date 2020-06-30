@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class LambdaTest {
     public static void main(String[] args) {
+
         List<String> strings = Lists.newArrayList();
         strings.add("小宋");
         strings.add("就是个");
@@ -18,7 +19,7 @@ public class LambdaTest {
         List<String> stringList = Lists.newArrayList();
         strings.forEach(e -> {
             if (e.length() > 2) {
-                stringList.add(0, e);
+                stringList.add(e);
             }
         });
         System.out.println(stringList.size());
@@ -57,6 +58,7 @@ public class LambdaTest {
 
         Thread thread2 = new Thread(runnable2);
         thread2.start();
+
         List<Integer> listA = Lists.newArrayList();
         listA.add(1);
         listA.add(2);
