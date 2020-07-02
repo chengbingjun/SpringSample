@@ -4,6 +4,8 @@
 package com.example.entity;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -12,7 +14,6 @@ import java.util.Date;
  * systemUser:
  * Date: 2019-12-30 03:40:41
  */
-
 public class PmsTask implements Serializable {
 
     /** ID -  */
@@ -72,9 +73,10 @@ public class PmsTask implements Serializable {
     public PmsTask(){
     }
 
-    public PmsTask(Integer ID, String name) {
+    public PmsTask(Integer ID, String name ,Date createDate) {
         this.ID = ID;
         this.name = name;
+        this.createDate = createDate;
     }
 
     public Integer getID() {
@@ -249,11 +251,14 @@ public class PmsTask implements Serializable {
         return result;
     }
 
+    DateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     @Override
     public String toString() {
         return "PmsTask{" +
                 "ID=" + ID +
                 ", name='" + name + '\'' +
+                ", createDate=" + f.format(createDate) +
                 '}';
     }
 }
