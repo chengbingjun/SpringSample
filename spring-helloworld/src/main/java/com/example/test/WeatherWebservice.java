@@ -10,6 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 //天气相关webservice调用，其中入参格式需要通过SoapUI去解析获取。
+//生成客户端方式请求在项目：springboot中
 public class WeatherWebservice {
     public static void main(String[] args) throws Exception {
         String str = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:web=\"http://WebXml.com.cn/\">\n" +
