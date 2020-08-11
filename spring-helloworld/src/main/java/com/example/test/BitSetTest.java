@@ -9,7 +9,7 @@ import java.util.*;
  * @create 2020/8/11 10:39
  */
 //问题：有0-9十个数，创建在0-9范围内的5个随机数，如何得到0-9之间不在随机数中的数
-//方法：bitset位图
+//方法：bitset位图(线程不安全的)
 public class BitSetTest {
 
     public static void main(String[] args) {
