@@ -1,5 +1,7 @@
 package com.example.test;
 
+import com.google.common.collect.Sets;
+
 import java.util.*;
 
 /**
@@ -37,20 +39,26 @@ public class BitSetTest {
     }
 
     //问题：创建出10个不重复的随机数
-    //方法：bitset
-    public static void unRepeatNum(){
+    public static void unRepeatNum() {
+        //思路一：bitset（不属于集合类），省内存
         Random random = new Random();
         List<Integer> list = new ArrayList<>();
         BitSet bitSet = new BitSet(10);
-        while (list.size()<10){
-            int num = random.nextInt(15);
-            if(!bitSet.get(num)){
+        while (list.size() < 10) {
+            int num = random.nextInt(10);
+            if (!bitSet.get(num)) {
                 bitSet.set(num);
                 list.add(num);
             }
         }
         list.sort(Comparator.naturalOrder());
-        System.out.println("随机数"+list);
+        System.out.println("随机数" + list);
+        //思路二：set集合，代码简洁
+        Set<Integer> set = Sets.newHashSet();
+        while(set.size()<10){
+            set.add(random.nextInt(10));
+        }
+        System.out.println("随机数"+set);
     }
 }
 
