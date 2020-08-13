@@ -1,0 +1,21 @@
+package com.cbj.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
+/**
+ * @Author cbjun
+ * @create 2020/8/12 11:25
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User implements Serializable {
+
+    private String name;
+
+    private String age;
+}
