@@ -1,11 +1,5 @@
 package com.cbj.example.utils;
 
-import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -19,12 +13,18 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class HttpClientUtil {
 
     public static String doGet(String url, Map<String, String> param) {
 
         // 创建Httpclient对象
-        CloseableHttpClient httpclient = HttpClients.createDefault();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
 
         String resultString = "";
         CloseableHttpResponse response = null;
@@ -42,19 +42,13 @@ public class HttpClientUtil {
             HttpGet httpGet = new HttpGet(uri);
 
             // 执行请求
-            response = httpclient.execute(httpGet);
-            // 判断返回状态是否为200
-            if (response.getStatusLine().getStatusCode() == 200) {
-                resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
-            }
+            response = httpClient.execute(httpGet);
+            resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                if (response != null) {
-                    response.close();
-                }
-                httpclient.close();
+                close(response, httpClient);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -91,9 +85,8 @@ public class HttpClientUtil {
             e.printStackTrace();
         } finally {
             try {
-                response.close();
+                close(response, httpClient);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -123,13 +116,21 @@ public class HttpClientUtil {
             e.printStackTrace();
         } finally {
             try {
-                response.close();
+                close(response, httpClient);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
 
         return resultString;
+    }
+
+    public static void close(CloseableHttpResponse response, CloseableHttpClient client) throws IOException {
+        if (response != null) {
+            response.close();
+        }
+        if (client != null) {
+            client.close();
+        }
     }
 }
