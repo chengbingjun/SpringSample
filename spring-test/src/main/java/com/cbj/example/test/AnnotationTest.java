@@ -14,7 +14,7 @@ import java.util.Map;
  * @Author cbjun
  * @create 2020/7/8 10:03
  */
-public class Test04 {
+public class AnnotationTest {
 
     public static void main(String[] args) {
 //        String s = "cc";
@@ -44,7 +44,7 @@ public class Test04 {
     @Test()
     @PostMapping("/hehehehe")
     public void test(){
-        PostMapping result = AnnotationTool.getAnnotation(Test04.class,PostMapping.class,"test");
+        PostMapping result = AnnotationTool.getAnnotation(AnnotationTest.class,PostMapping.class,"test");
         String[] strs = result.value();
         List<String> list = Arrays.asList(strs);
         list.forEach(e->{
