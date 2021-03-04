@@ -1,6 +1,7 @@
 package com.cbj.example.test;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -9,7 +10,7 @@ import java.util.concurrent.FutureTask;
  */
 public class ThreadTest{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         Thread01 thread01 = new Thread01();
         thread01.start();
         Thread thread02 = new Thread(new Thread02());
@@ -17,6 +18,7 @@ public class ThreadTest{
         FutureTask<String> task = new FutureTask<>(new Thread03());
         Thread thread03 = new Thread(task);
         thread03.start();
+        System.out.println(task.get());
     }
 }
 
